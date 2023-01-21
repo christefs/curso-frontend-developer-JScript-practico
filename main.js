@@ -2,7 +2,7 @@ const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
-const productDetailCloseIcon = document.querySelector('.product-detail-close');
+//const productDetailCloseIcon = document.querySelector('.product-detail-close'); //Icono de cierre de detalle de producto Inhabilitado para pruebas
 
 const burgerMenuIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -18,7 +18,7 @@ burgerMenuIcon.addEventListener('click', toggleMobileMenu);
 
 menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
-productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
+//productDetailCloseIcon.addEventListener('click', closeProductDetailAside); //Icono de cierre de detalle de producto Inhabilitado para pruebas
 
 function toggleDesktopMenu(){
 //    console.log('Click');
@@ -57,7 +57,9 @@ function toggleCarritoAside(){
 
 function openProductDetailAside() {
     shoppingCartContainer.classList.add('inactive');
-    productDetailContainer.classList.remove('inactive');
+    //productDetailContainer.classList.remove('inactive');
+
+    //detailOfProduct(); //Nueva
 }
 
 function closeProductDetailAside() {
@@ -165,7 +167,9 @@ function renderProducts(arr){
     
         const productImg = document.createElement('img'); //Crea elemento img productImg
         productImg.setAttribute('src', product.image); //Añade objeto image con la ruta de la imagen al elemento img
-        productImg.addEventListener('click', openProductDetailAside);
+        //productImg.addEventListener('click', openProductDetailAside);
+        productImg.addEventListener('click', detailOfProduct);
+        
 
         const productInfo = document.createElement('div'); //Crea elemento div productInfo
         productInfo.classList.add('product-info'); //Añade clase product-info a elemento div
@@ -197,3 +201,69 @@ function renderProducts(arr){
 }
 
 renderProducts(productList);
+
+/*
+<aside id="productDetail" class="inactive">
+    <div class="product-detail-close">
+      <img src="./icons/icon_close.png" alt="close">
+    </div>
+    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+    <div class="product-info">
+      <p>$35,00</p>
+      <p>Bike</p>
+      <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
+      <button class="primary-button add-to-cart-button">
+        <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+        Add to cart
+      </button>
+    </div>
+  </aside>
+  */
+
+  function detailOfProduct(){
+
+
+    const closingDiv = document.createElement('div');
+    closingDiv.classList.add('product-detail-close');
+
+    const closingImg = document.createElement('img');
+    closingImg.setAttribute('src', "./icons/icon_close.png");
+    closingImg.addEventListener('click', closeProductDetailAside);
+
+    closingDiv.appendChild(closingImg);
+
+    const photoProduct = document.createElement('img');
+    photoProduct.setAttribute('src', "https://images.pexels.com/photos/1999463/pexels-photo-1999463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+    const informationDiv = document.createElement('div');
+    informationDiv.classList.add('product-info');
+
+    const priceP = document.createElement('p');
+    priceP.innerText = '$ 635';
+    const nameP = document.createElement('p');
+    nameP.innerText = 'Computer';
+    const descriptionP = document.createElement('p');
+    descriptionP.innerText = 'Computer with flat screen, optical mouse, 10G RAM, 3GHz processor';
+
+    const addingButton = document.createElement('button');
+    addingButton.classList.add('primary-button');
+    addingButton.classList.add('add-to-cart-button');
+
+    const addingImage = document.createElement('img');
+    addingImage.setAttribute('src', "./icons/bt_add_to_cart.svg");
+    addingImage.innerText = 'Add to cart';
+
+    addingButton.appendChild(addingImage);
+
+    informationDiv.appendChild(priceP);
+    informationDiv.appendChild(nameP);
+    informationDiv.appendChild(descriptionP);
+    informationDiv.appendChild(addingButton);
+
+    productDetailContainer.appendChild(closingDiv);
+    productDetailContainer.appendChild(photoProduct);
+    productDetailContainer.appendChild(informationDiv);
+
+    productDetailContainer.classList.remove('inactive');
+
+  }
