@@ -20,6 +20,8 @@ menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
 //productDetailCloseIcon.addEventListener('click', closeProductDetailAside); //Icono de cierre de detalle de producto Inhabilitado para pruebas
 
+detailOfProduct();
+
 function toggleDesktopMenu(){
 //    console.log('Click');
     desktopMenu.classList.toggle('inactive');
@@ -57,7 +59,7 @@ function toggleCarritoAside(){
 
 function openProductDetailAside() {
     shoppingCartContainer.classList.add('inactive');
-    //productDetailContainer.classList.remove('inactive');
+    productDetailContainer.classList.remove('inactive');
 
     //detailOfProduct(); //Nueva
 }
@@ -167,8 +169,8 @@ function renderProducts(arr){
     
         const productImg = document.createElement('img'); //Crea elemento img productImg
         productImg.setAttribute('src', product.image); //Añade objeto image con la ruta de la imagen al elemento img
-        //productImg.addEventListener('click', openProductDetailAside);
-        productImg.addEventListener('click', detailOfProduct);
+        productImg.addEventListener('click', openProductDetailAside);
+        //productImg.addEventListener('click', detailOfProduct);
         
 
         const productInfo = document.createElement('div'); //Crea elemento div productInfo
@@ -248,10 +250,11 @@ renderProducts(productList);
     const addingButton = document.createElement('button');
     addingButton.classList.add('primary-button');
     addingButton.classList.add('add-to-cart-button');
+    addingButton.innerHTML = 'Add to cart';
 
     const addingImage = document.createElement('img');
     addingImage.setAttribute('src', "./icons/bt_add_to_cart.svg");
-    addingImage.innerText = 'Add to cart';
+    
 
     addingButton.appendChild(addingImage);
 
@@ -264,6 +267,6 @@ renderProducts(productList);
     productDetailContainer.appendChild(photoProduct);
     productDetailContainer.appendChild(informationDiv);
 
-    productDetailContainer.classList.remove('inactive');
+//    productDetailContainer.classList.remove('inactive');
 
   }
