@@ -20,7 +20,7 @@ menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
 //productDetailCloseIcon.addEventListener('click', closeProductDetailAside); //Icono de cierre de detalle de producto Inhabilitado para pruebas
 
-detailOfProduct();
+//detailOfProduct(); Crea el detalle de producto desde el inicio
 
 function toggleDesktopMenu(){
 //    console.log('Click');
@@ -59,7 +59,7 @@ function toggleCarritoAside(){
 
 function openProductDetailAside() {
     shoppingCartContainer.classList.add('inactive');
-    productDetailContainer.classList.remove('inactive');
+    //productDetailContainer.classList.remove('inactive');
 
     //detailOfProduct(); //Nueva
 }
@@ -70,79 +70,81 @@ function closeProductDetailAside() {
 
 //console.log('JS funcionando');
 
-const productList = [];
-productList.push({
-    name: 'Bike',
-    price: 150,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-});
 
-productList.push({
-    name: 'Shirt',
-    price: 17,
-    image: "https://media.istockphoto.com/id/1199864582/es/foto/camiseta-aislada-sobre-blanco.jpg?s=1024x1024&w=is&k=20&c=Jm4wZuXGl33L_XRr0yPhXWjOGxu7Oj0OMpIHeXFZ1YY="
-});
+    const productList = [];
+    productList.push({
+        name: 'Bike',
+        price: 150,
+        image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    });
 
-productList.push({
-    name: 'Tennis shoes Nike',
-    price: 53,
-    image: "https://images.pexels.com/photos/4252969/pexels-photo-4252969.jpeg"
-});
+    productList.push({
+        name: 'Shirt',
+        price: 17,
+        image: "https://media.istockphoto.com/id/1199864582/es/foto/camiseta-aislada-sobre-blanco.jpg?s=1024x1024&w=is&k=20&c=Jm4wZuXGl33L_XRr0yPhXWjOGxu7Oj0OMpIHeXFZ1YY="
+    });
 
-productList.push({
-    name: 'Computer',
-    price: 635,
-    image: "https://images.pexels.com/photos/1999463/pexels-photo-1999463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-});
+    productList.push({
+        name: 'Tennis shoes Nike',
+        price: 53,
+        image: "https://images.pexels.com/photos/4252969/pexels-photo-4252969.jpeg"
+    });
 
-productList.push({
-    name: 'Smarthphone',
-    price: 190,
-    image: "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-});
+    productList.push({
+        name: 'Computer',
+        price: 635,
+        image: "https://images.pexels.com/photos/1999463/pexels-photo-1999463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    });
 
-productList.push({
-    name: 'Sofa',
-    price: 254,
-    image: "https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-});
+    productList.push({
+        name: 'Smarthphone',
+        price: 190,
+        image: "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    });
 
-productList.push({
-    name: 'Doll Captain America',
-    price: 20,
-    image: "https://http2.mlstatic.com/D_NQ_NP_761102-CBT50141142921_052022-V.jpg"
-});
+    productList.push({
+        name: 'Sofa',
+        price: 254,
+        image: "https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    });
 
-productList.push({
-    name: 'Toy car with Remote Control',
-    price: 20,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3BURN1s-I0cgS11isCtA8dduRs_xy_sW6_Q&usqp=CAU"
-});
+    productList.push({
+        name: 'Doll Captain America',
+        price: 20,
+        image: "https://http2.mlstatic.com/D_NQ_NP_761102-CBT50141142921_052022-V.jpg"
+    });
 
-productList.push({
-    name: 'Tools kit',
-    price: 20,
-    image: "https://images.pexels.com/photos/175039/pexels-photo-175039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-});
+    productList.push({
+        name: 'Toy car with Remote Control',
+        price: 20,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3BURN1s-I0cgS11isCtA8dduRs_xy_sW6_Q&usqp=CAU"
+    });
 
-productList.push({
-    name: 'Portfolio',
-    price: 53,
-    image: "https://media.istockphoto.com/id/182255361/es/foto/negro-malet%C3%ADn.jpg?s=1024x1024&w=is&k=20&c=L6AJUaQAy8e0XYPux9buutfFMWAOrdyydwpu8h0oSXg="
-});
+    productList.push({
+        name: 'Tools kit',
+        price: 20,
+        image: "https://images.pexels.com/photos/175039/pexels-photo-175039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    });
 
-productList.push({
-    name: 'Blender',
-    price: 22,
-    image: "https://almacencoogranada.com/wp-content/uploads/2020/06/L63200electro1.jpg"
-});
+    productList.push({
+        name: 'Portfolio',
+        price: 53,
+        image: "https://media.istockphoto.com/id/182255361/es/foto/negro-malet%C3%ADn.jpg?s=1024x1024&w=is&k=20&c=L6AJUaQAy8e0XYPux9buutfFMWAOrdyydwpu8h0oSXg="
+    });
 
-productList.push({
-    name: 'Chair',
-    price: 70,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhY56eZQPRMW60xEgEXwP7hHukw4caQcW8EA&usqp=CAU"
-});
+    productList.push({
+        name: 'Blender',
+        price: 22,
+        image: "https://almacencoogranada.com/wp-content/uploads/2020/06/L63200electro1.jpg"
+    });
 
+    productList.push({
+        name: 'Chair',
+        price: 70,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhY56eZQPRMW60xEgEXwP7hHukw4caQcW8EA&usqp=CAU"
+    });
+
+    
 
 /*
 <div class="product-card">
@@ -159,6 +161,7 @@ productList.push({
 </div>
 */
 
+
 function renderProducts(arr){
 
     for (product of productList) {
@@ -167,12 +170,13 @@ function renderProducts(arr){
     
         //product= {name, price, image} -> product.image
     
-        const productImg = document.createElement('img'); //Crea elemento img productImg
+        let productImg = document.createElement('img'); //Crea elemento img productImg
         productImg.setAttribute('src', product.image); //Añade objeto image con la ruta de la imagen al elemento img
-        productImg.addEventListener('click', openProductDetailAside);
+        //productImg.addEventListener('click', openProductDetailAside);
         //productImg.addEventListener('click', detailOfProduct);
-        
+        //productImg.addEventListener('click', function () { detailOfProduct(this.productList); });
 
+        
         const productInfo = document.createElement('div'); //Crea elemento div productInfo
         productInfo.classList.add('product-info'); //Añade clase product-info a elemento div
     
@@ -200,9 +204,22 @@ function renderProducts(arr){
     
         cardsContainer.appendChild(productCard); //Define ingreso del elemento div productCard dentro del contenedor div general cardsContainer definido en la parte html
     }
+
+        
 }
 
 renderProducts(productList);
+
+/*
+// Get a list of every element in the document
+var elements = document.querySelectorAll("img");
+
+// Add bluify as a click listener so when the
+// element is clicked on, it turns blue
+for (const element of elements) {
+    element.addEventListener("click", detailOfProduct, false);
+}
+*/
 
 /*
 <aside id="productDetail" class="inactive">
@@ -221,21 +238,41 @@ renderProducts(productList);
     </div>
   </aside>
   */
+/*
+  for(var i=0 ; i<productList.length ; i++){
+    productList[i].addEventListener('click', detailOfProduct);
+  }
+*/
 
-  function detailOfProduct(){
 
 
+  function detailOfProduct(dataPath){
+/*
+    // Always true
+    console.log(this === e.currentTarget);
+    // true when currentTarget and target are the same object
+    console.log(this === e.target);
+    //this.style.backgroundColor = "#A5D9F3";
+*/
+    
+    
     const closingDiv = document.createElement('div');
     closingDiv.classList.add('product-detail-close');
 
-    const closingImg = document.createElement('img');
+    let closingImg = document.createElement('img');
     closingImg.setAttribute('src', "./icons/icon_close.png");
-    closingImg.addEventListener('click', closeProductDetailAside);
+    //closingImg.addEventListener('click', closeProductDetailAside);
+    //closingImg.classList.add('closeImage');
+    closingImg.div = "closeImage";
 
     closingDiv.appendChild(closingImg);
 
-    const photoProduct = document.createElement('img');
-    photoProduct.setAttribute('src', "https://images.pexels.com/photos/1999463/pexels-photo-1999463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    let photoProduct = document.createElement('img');
+//    photoProduct.setAttribute('src', "https://images.pexels.com/photos/1999463/pexels-photo-1999463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    
+    photoProduct.setAttribute('src', dataPath);  //Ej: productList[5].image
+    
+    
 
     const informationDiv = document.createElement('div');
     informationDiv.classList.add('product-info');
@@ -269,4 +306,38 @@ renderProducts(productList);
 
 //    productDetailContainer.classList.remove('inactive');
 
+    const pruebaDiv = document.createElement('div');
+    //informationDiv.classList.add('product-info');
+
+    const pruebaP = document.createElement('p');
+    pruebaP.innerText = theProduct;
+
+    pruebaDiv.appendChild(pruebaP);
+
   }
+
+  const images = document.querySelectorAll('img');
+
+  for (const image of images){
+    const path = image.getAttribute('src');
+    image.addEventListener("click", () => {detailOfProduct(path); }, false);
+  }
+
+  const theCloserImg = document.getElementById('#closeImage');
+  //const theCloserImg1 = theCloserImg.getAttribute('class');
+  console.log(theCloserImg);
+  theCloserImg.addEventListener('click', closeProductDetailAside, false);
+
+    //var elements = document.querySelectorAll("img");
+/*
+for (const element of productList) {
+                
+    element.addEventListener("click", bluify, false);
+    
+}
+
+    
+function bluify(){
+    photoProduct.setAttribute('src', element.image);
+}
+*/
