@@ -8,9 +8,13 @@ const burgerMenuIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
+
 const productDetailContainer = document.querySelector('#productDetail');
 
+
 const cardsContainer = document.querySelector('.cards-container');
+
+var photoProduct = document.getElementById('prodImage'); //Cuadro para colocar la copia de la imagen del producto seleccionado
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 
@@ -64,9 +68,7 @@ function openProductDetailAside() {
     //detailOfProduct(); //Nueva
 }
 
-function closeProductDetailAside() {
-    productDetailContainer.classList.add('inactive');
-}
+
 
 //console.log('JS funcionando');
 
@@ -161,6 +163,10 @@ function closeProductDetailAside() {
 </div>
 */
 
+function closeProductDetailAside() {
+    productDetailContainer.classList.add('inactive');
+}
+
 
 function renderProducts(arr){
 
@@ -170,7 +176,7 @@ function renderProducts(arr){
     
         //product= {name, price, image} -> product.image
     
-        let productImg = document.createElement('img'); //Crea elemento img productImg
+        var productImg = document.createElement('img'); //Crea elemento img productImg
         productImg.setAttribute('src', product.image); //Añade objeto image con la ruta de la imagen al elemento img
         //productImg.addEventListener('click', openProductDetailAside);
         //productImg.addEventListener('click', detailOfProduct);
@@ -205,21 +211,13 @@ function renderProducts(arr){
         cardsContainer.appendChild(productCard); //Define ingreso del elemento div productCard dentro del contenedor div general cardsContainer definido en la parte html
     }
 
+    
         
 }
 
 renderProducts(productList);
 
-/*
-// Get a list of every element in the document
-var elements = document.querySelectorAll("img");
 
-// Add bluify as a click listener so when the
-// element is clicked on, it turns blue
-for (const element of elements) {
-    element.addEventListener("click", detailOfProduct, false);
-}
-*/
 
 /*
 <aside id="productDetail" class="inactive">
@@ -245,35 +243,27 @@ for (const element of elements) {
 */
 
 
-
   function detailOfProduct(dataPath){
-/*
-    // Always true
-    console.log(this === e.currentTarget);
-    // true when currentTarget and target are the same object
-    console.log(this === e.target);
-    //this.style.backgroundColor = "#A5D9F3";
-*/
-    
-    
+
+/*    
     const closingDiv = document.createElement('div');
     closingDiv.classList.add('product-detail-close');
 
-    let closingImg = document.createElement('img');
+    const closingImg = document.createElement('img');
     closingImg.setAttribute('src', "./icons/icon_close.png");
+    closingImg.classList.add('closeImage');
     //closingImg.addEventListener('click', closeProductDetailAside);
-    //closingImg.classList.add('closeImage');
-    closingImg.div = "closeImage";
+    //closingImg.className = "closeImage";
 
     closingDiv.appendChild(closingImg);
 
-    let photoProduct = document.createElement('img');
+    const photoProduct = document.createElement('img');
 //    photoProduct.setAttribute('src', "https://images.pexels.com/photos/1999463/pexels-photo-1999463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+*/    
+    photoProduct.setAttribute('src', dataPath);  //Inserta la ruta capturada de la imagen seleccionada. Ejemplo de alternativa: productList[5].image
     
-    photoProduct.setAttribute('src', dataPath);  //Ej: productList[5].image
     
-    
-
+/*
     const informationDiv = document.createElement('div');
     informationDiv.classList.add('product-info');
 
@@ -304,29 +294,38 @@ for (const element of elements) {
     productDetailContainer.appendChild(photoProduct);
     productDetailContainer.appendChild(informationDiv);
 
-//    productDetailContainer.classList.remove('inactive');
+*/    
+    productDetailContainer.classList.remove('inactive');
 
-    const pruebaDiv = document.createElement('div');
-    //informationDiv.classList.add('product-info');
-
-    const pruebaP = document.createElement('p');
-    pruebaP.innerText = theProduct;
-
-    pruebaDiv.appendChild(pruebaP);
+    
 
   }
 
-  const images = document.querySelectorAll('img');
+  //productDetailContainer.classList.remove('inactive');
 
+  var images = document.querySelectorAll("div.product-card > img");
+  
+  
   for (const image of images){
-    const path = image.getAttribute('src');
+    const path = image.getAttribute('src');  //Captura la ruta de la imagen seleccionada
     image.addEventListener("click", () => {detailOfProduct(path); }, false);
   }
 
-  const theCloserImg = document.getElementById('#closeImage');
+  
+  
+  var closeIcon = document.getElementById('closeImage');
+  closeIcon.addEventListener("click", closeProductDetailAside, false);
+  //closingImg.addEventListener('click', closeProductDetailAside);
+
+
+  /*
   //const theCloserImg1 = theCloserImg.getAttribute('class');
-  console.log(theCloserImg);
-  theCloserImg.addEventListener('click', closeProductDetailAside, false);
+  const theCloserImg = document.querySelectorAll('closeImage');
+  theCloserImg.addEventListener("click", closeProductDetailAside, false);
+  */
+
+  
+  
 
     //var elements = document.querySelectorAll("img");
 /*
